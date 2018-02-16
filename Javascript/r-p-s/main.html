@@ -1,0 +1,54 @@
+<!DOCTYPE HMTL>
+<html>
+
+<head>
+  <title> Rock, Paper, Scissors</title>
+</head>
+
+<body>
+
+<script>
+
+
+
+  // player chooses through prompt
+  function playerSelection() {
+       let playerChoice = prompt("Please choose between rock, paper and scissors");
+       return playerChoice.toLowerCase();
+     }
+
+     //computer randomly generates a number
+     function computerPlay() {
+       let numb = Math.floor(Math.random() * 3);
+           if (numb === 0) {
+           return 'rock';
+         }
+         else if (numb === 1) {
+           return 'paper';
+         }
+         else {
+           return 'scissors';
+         }
+       }
+
+  // player and computer pick the same
+  function playRound(playerSelection, computerSelection) {
+	   if (playerSelection === computerSelection) {
+       alert ("Draw!");
+     }
+  // player wins
+    if ((playerSelection === 'rock' && computerSelection === 'scissors') ||
+        (playerSelection === 'paper' && computerSelection === 'rock') ||
+        (playerSelection === 'scissors' && computerSelection === 'paper')) {
+       alert("You Win!");
+     }
+  //computer wins
+     else {
+       alert("Computer Wins!")
+     }
+}
+</script>
+
+</body>
+
+</html>
